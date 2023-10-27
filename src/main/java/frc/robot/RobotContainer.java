@@ -17,6 +17,7 @@ import frc.robot.subsystems.Drivetrain;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Drivetrain m_drivetrain = new Drivetrain();
+  private final XboxController m_controller = new XboxController(0);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -45,6 +46,6 @@ public class RobotContainer {
   }
 
   public Command getArcadeDriveCommand() {
-    return new Drive(m_drivetrain, () -> 0, () -> 0);
+    return new Drive(m_drivetrain, () -> m_controller.getLeftY(), () -> m_controller.getRightX());
   }
 }
