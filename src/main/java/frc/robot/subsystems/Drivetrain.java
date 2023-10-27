@@ -16,4 +16,8 @@ public class Drivetrain extends SubsystemBase {
     public Drivetrain() {
         m_rightMotor.setInverted(true);
     }
+
+    public void arcadeDrive(double xSpeed, double zRotation) {
+        m_diffDrive.arcadeDrive(xSpeed, zRotation);
+    }
 }
