@@ -4,8 +4,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
 public class Drive extends CommandBase {
+  private final Drivetrain m_drivetrain;
 
-  public Drive() {}
+  public Drive(Drivetrain drivetrain) {
+    m_drivetrain = drivetrain;
+
+    addRequirements(drivetrain);
+  }
 
   // Called when the command is initially scheduled.
   @Override
